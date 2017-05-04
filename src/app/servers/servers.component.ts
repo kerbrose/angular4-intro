@@ -29,4 +29,17 @@ export class ServersComponent implements OnInit {
     this.serverName = (<HTMLInputElement>event.target).value;
   }
 
+  username = '';
+  allowButton = false;
+
+  userNameUpdate(event:Event){
+    this.allowButton = true;
+    this.username  = (<HTMLInputElement>event.target).value;
+  }
+
+  onUpdateUsername(){
+    this.username = '';
+    this.allowButton = false;
+  }
+
 }

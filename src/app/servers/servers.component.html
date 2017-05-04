@@ -14,3 +14,14 @@
 <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
+
+
+<input type="text"
+       class="form-control"
+       (input)="userNameUpdate($event)" 
+       [(ngModel)]="username" />
+<p>{{ username }}</p>
+
+<button class="btn btn-primary" 
+        [disabled]="!allowButton" 
+        (click)="onUpdateUsername()" >Update Username</button>
