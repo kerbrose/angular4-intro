@@ -12,6 +12,16 @@
         [disabled]="!allowNewServer" 
         (click)="onCreateServer()" >Add Server</button>
 <p *ngIf="serverCreated; else noServer">Server was created! Server name is {{ serverName }}</p>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
 
+
+
+<button class="btn btn-primary" 
+        (click)="onToggleParagraph()" >Display Details</button>
+<p *ngIf="!hidden">Secret Password = tuna</p>
+<ol>
+        <li *ngFor="let log of time_logger">
+                <div [ngStyle]="{ backgroundColor: apply_style ? 'blue' : 'white' }" 
+                     [ngClass]="{special: apply_style === true}">{{ log }}</div>
+        </li>
+</ol>
